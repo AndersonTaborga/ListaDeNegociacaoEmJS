@@ -1,6 +1,5 @@
 # Projeto-Lista-de-Negociacao
-O projeto é uma lista de negociação em ES6, usando todos os conceitos praticos MVC e também códigos com soluções seguindo
-padrão de desenvolvimento Orientado a Objeto.
+O projeto é uma lista de negociação em ES6, seguindo padrão de arquitetura de software **MVC**, programação orientado a objeto **POO** e padrão **PROXY**.
 
 [![Build Status]()](https://secure.travis-ci.org/zendframework/zend-problem-details)
 [![Coverage Status]()](https://coveralls.io/github/zendframework/zend-problem-details?branch=master)
