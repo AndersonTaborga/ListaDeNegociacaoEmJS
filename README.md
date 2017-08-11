@@ -1,5 +1,6 @@
 # Projeto-Lista-de-Negociacao
-Curso que realizei na Alura
+O projeto é uma lista de negociação em ES6, usando todos os conceitos praticos MVC e também códigos com soluções seguindo
+padrão de desenvolvimento Orientado a Objeto.
 
 [![Build Status]()](https://secure.travis-ci.org/zendframework/zend-problem-details)
 [![Coverage Status]()](https://coveralls.io/github/zendframework/zend-problem-details?branch=master)
