@@ -1,0 +1,9 @@
+version: '3'
+services:
+  frontend:
+    image: nginx:1.13
+    volumes:
+    # Site
+      - ./:/usr/share/nginx/html/
+    ports:
+      - 80:80
