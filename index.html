@@ -14,6 +14,8 @@
     
     <h1 class="text-center">Negociações</h1>
     
+    <div id="mensagemView"></div>
+
     <!-- Chamada do método adiciona da classe NegociacaoController usando formato das framewoks como angular -->
     <form class="form" onsubmit="negociacaoController.adiciona(event)">
         
@@ -52,7 +54,10 @@
     <script src="js/app/controllers/NegociacaoController.js"></script>
     <script src="js/app/helpers/DateHelper.js"></script>
     <script src="js/app/models/ListaNegociacoes.js"></script>
+    <script src="js/app/views/View.js"></script>
     <script src="js/app/views/NegociacoesView.js"></script>
+    <script src="js/app/models/Mensagem.js"></script>
+    <script src="js/app/views/MensagemView.js"></script>
     <script>
     
         let negociacaoController = new NegociacaoController();
