@@ -1,9 +1,16 @@
 version: '3'
 services:
-  frontend:
+  nginx:
     image: nginx:1.13
     volumes:
     # Site
-      - ./:/usr/share/nginx/html/
+      - .:/usr/share/nginx/html/
     ports:
       - 80:80
+  node:
+    image: node:8.1
+    volumes:
+      - ./server:/node
+    ports:
+      - 3000:3000
+    command: bash -c "cd /node && npm i && node server"
