@@ -1,4 +1,4 @@
-var ConnectionFactory = (function () {
+var ConnectionFactory = (function () {//Padrão module pattner
     
     const stores = ['negociacoes'];
     const version = 4;
@@ -55,6 +55,7 @@ var ConnectionFactory = (function () {
             
             stores.forEach(store => {
         
+                //Está apagando as objectos stores existentes e as recria
                 if(connection.objectStoreNames.contains(stores)) connection.deleteObjectStore(store);
                 connection.createObjectStore(store, { autoIncrement: true});
         

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dissecando uma Promise Exercicio</title>
+</head>
+<body>
+    <script>
+    
+        let ok = true;
+        let promise = new Promise((resolve, reject) => {
+            console.log(resolve)
+            setTimeout(() => {
+                if(ok) {
+                    resolve('PROMISE RESOLVIDA');
+                } else {
+                    reject('HOUVE PROBLEMAS');
+                }
+            }, 5000);
+        });
+
+        promise
+        .then(resultado => console.log(resultado))
+        .catch(erro => console.log(erro));
+       
+
+    </script>
+</body>
+</html>
