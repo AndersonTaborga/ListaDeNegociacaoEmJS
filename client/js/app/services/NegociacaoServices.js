@@ -66,7 +66,7 @@ class NegociacaoService {
             this.obterNegociacoesSemanaAnterior(),
             this.obterNegociacoesSemanaRetrasada()
         ]).then(periodos => {
-            
+
             let negociacoes = periodos
                 .reduce((dados, periodo) => dados.concat(periodo), []);
 
@@ -75,5 +75,59 @@ class NegociacaoService {
         }).catch(erro => {
             throw new Error(erro);
         });
+    }
+
+    cadastra(negociacao) {
+
+        return ConnectionFactory
+            .getConnection()
+            .then(connection => new NegociacaoDao(connection))
+            .then(dao => dao.adiciona(negociacao))
+            .then(() => 'Negociação adicionada com sucesso')
+            .catch(erro => {
+                console.log(erro);
+                throw new Error('Não foi possível adicionar negociação');
+            })
+    }
+
+    lista() {
+
+        return ConnectionFactory
+            .getConnection()
+            .then(connection => new NegociacaoDao(connection))
+            .then(dao => dao.listaTodos())
+            .catch(erro => {
+                console.log(erro);
+                throw new Error('Não foi possível listar as negociações');
+            })
+    }
+
+    apaga() {
+
+        return ConnectionFactory
+            .getConnection()
+            .then(connection => new NegociacaoDao(connection))
+            .then(dao => dao.apagaTodos())
+            .then(() => 'Negociação apagadas com sucesso')
+            .catch(erro => {
+                console.log(erro);
+                throw new Error('Não foi possível apagar a lista de negociação');
+            })
+
+    }
+
+    importa(listaAtual) {
+
+        return this.obterNegociacoes()
+            .then(negociacoes =>
+                negociacoes.filter(negociacao =>
+                    !listaAtual.some(negociacoesExistente =>
+                        negociacao.isEquals(negociacoesExistente)))
+            )
+            .catch(erro => {
+                console.log(erro);
+                throw new Error('Não foi possivel listar as importações');
+            })
+
     }
 }
